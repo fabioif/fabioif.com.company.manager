@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("fabioif.com.CompanyManager.Entities")]
+[assembly: AssemblyTitle("CompanyManager.Repository")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("fabioif.com.CompanyManager.Entities")]
+[assembly: AssemblyProduct("CompanyManager.Repository")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("7ae7ffcc-d7b8-4e4f-82c6-7ab89a3de3bd")]
+[assembly: Guid("d0a8a513-2c7e-47de-9639-2e8fd298050f")]
 
 // Version information for an assembly consists of the following four values:
 //
