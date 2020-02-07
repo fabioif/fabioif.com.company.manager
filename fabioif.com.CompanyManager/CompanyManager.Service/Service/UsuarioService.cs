@@ -1,15 +1,30 @@
 ﻿using CompanyManager.Entities;
+using CompanyManager.Repository;
 using CompanyManager.Repository.Interfaces;
+using CompanyManager.Repository.Repository;
+using CompanyManager.Service.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CompanyManager.Repository.Repository
+namespace CompanyManager.Service.Service
 {
-    public class UsuarioRepository : IUsuarioRepository
+    public class UsuarioService : IUsuarioService
     {
+        IUsuarioRepository usuarioRepository;
+
+        public UsuarioService(IUsuarioRepository _usuarioRepository)
+        {
+            usuarioRepository = _usuarioRepository;
+        }
+
+        public UsuarioService()
+        {
+            usuarioRepository = new UsuarioRepository();
+        }
+
         public Usuario ObterPorId(int Id)
         {
             throw new NotImplementedException();
@@ -40,13 +55,9 @@ namespace CompanyManager.Repository.Repository
             throw new NotImplementedException();
         }
 
-        public bool VerificarLoginExiste(string email, string senha)
+        public bool VerificarLoginExiste(string login, string senha)
         {
-            Usuario user = new Usuario();
-            user.Email = "fabioif@live.com";
-            user.Senha = "12345678";
-
-            return email == user.Email && senha == user.Senha;
+            return usuarioRepository.VerificarLoginExiste(login, senha);
         }
     }
 }

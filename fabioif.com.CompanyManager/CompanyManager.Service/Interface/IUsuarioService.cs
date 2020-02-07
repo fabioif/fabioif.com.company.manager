@@ -14,5 +14,6 @@ namespace CompanyManager.Service.Interface
         void Incluir(Usuario usuario);
         void Remover(Usuario usuario);
         void Atualizar(Usuario usuario);
+        bool VerificarLoginExiste(string Login, string Senha);
     }
 }

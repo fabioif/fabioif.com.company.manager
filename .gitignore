@@ -15,6 +15,7 @@ build/
 bld/
 [Bb]in/
 [Oo]bj/
+packages/
 
 # Roslyn cache directories
 *.ide/
@@ -127,6 +128,10 @@ publish/
 ## web deploy settings but do note that will include unencrypted
 ## passwords
 #*.pubxml
+
+# Enable "build/" folder in the NuGet Packages folder since NuGet packages use it for MSBuild targets
+!packages/*/build/
+!packages/*/
 
 # NuGet Packages Directory
 packages/*
