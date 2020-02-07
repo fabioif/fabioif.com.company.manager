@@ -8,6 +8,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompanyManager.Service", "CompanyManager.Service\CompanyManager.Service.csproj", "{84DEE757-E91C-4D7F-9966-0671AC0E90C5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompanyManager.Repository", "CompanyManager.Repository\CompanyManager.Repository.csproj", "{F001DEE0-52B3-4579-BBD5-DC07FD5E50B2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{54BBF07E-A07D-46AC-9A96-357AA2A04150} = {54BBF07E-A07D-46AC-9A96-357AA2A04150}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompanyManager.MVC", "CompanyManager.MVC\CompanyManager.MVC.csproj", "{2DC266CD-F3D5-42CC-8FBF-AF2983C9F056}"
 EndProject
