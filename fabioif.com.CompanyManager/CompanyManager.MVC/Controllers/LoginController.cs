@@ -34,7 +34,11 @@ namespace CompanyManager.MVC.Controllers
             if (ModelState.IsValid)
 
                 if (usuarioService.VerificarLoginExiste(model.Email, model.Senha))
+                {
+
                     return RedirectToAction("Index", "Home");
+                }
+                    
 
             return View("Index");
         }
