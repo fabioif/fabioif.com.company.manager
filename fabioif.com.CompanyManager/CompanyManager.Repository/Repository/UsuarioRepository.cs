@@ -40,13 +40,14 @@ namespace CompanyManager.Repository.Repository
             throw new NotImplementedException();
         }
 
-        public bool VerificarLoginExiste(string email, string senha)
+
+        public Usuario Login(string Login, string Senha)
         {
             Usuario user = new Usuario();
             user.Email = "fabioif@live.com";
             user.Senha = "12345678";
 
-            return email == user.Email && senha == user.Senha;
+            return user;
         }
     }
 }

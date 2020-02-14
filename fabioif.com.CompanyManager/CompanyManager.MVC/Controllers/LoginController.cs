@@ -5,11 +5,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Security;
+using System.Web.Security;
 using System.Web.Mvc;
+
 
 namespace CompanyManager.MVC.Controllers
 {
-    public class LoginController : Controller
+    public class LoginController : BaseController
     {
         IUsuarioService usuarioService;
 
@@ -23,24 +26,39 @@ namespace CompanyManager.MVC.Controllers
             usuarioService = new UsuarioService();
         }
 
+        [AllowAnonymous]
         public ActionResult Index()
         {
             return View();
         }
 
+       [ValidateAntiForgeryToken]
         [HttpPost]
+        [AllowAnonymous]
         public ActionResult Login(LoginViewModel model)
         {
             if (ModelState.IsValid)
-
-                if (usuarioService.VerificarLoginExiste(model.Email, model.Senha))
+            {
+                try
                 {
+                    UsuarioAutenticado = usuarioService.Login(model.Email, model.Senha);
 
-                    return RedirectToAction("Index", "Home");
+                    if (UsuarioAutenticado != null)
+                    {
+                        FormsAuthentication.SetAuthCookie(model.Email, false);
+
+                        return RedirectToAction("Index", "Home");
+                    }
                 }
-                    
+                catch (Exception a)
+                {
+                    throw (new Exception("Acesso negado", a));
+                }
 
-            return View("Index");
+                return View("Index");
+            }
+
+            return View(model);
         }
     }
 }

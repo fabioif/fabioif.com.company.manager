@@ -55,9 +55,10 @@ namespace CompanyManager.Service.Service
             throw new NotImplementedException();
         }
 
-        public bool VerificarLoginExiste(string login, string senha)
+        public Usuario Login(string Login, string Senha)
         {
-            return usuarioRepository.VerificarLoginExiste(login, senha);
+            return usuarioRepository.Login(Login, Senha);
         }
+
     }
 }

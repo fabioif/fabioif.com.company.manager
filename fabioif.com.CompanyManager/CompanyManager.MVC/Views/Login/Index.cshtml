@@ -23,8 +23,8 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                @using (Html.BeginForm("Login", "Login", FormMethod.Post, new { @class = "text-center" }))
-                {
+                @using (Html.BeginForm("Login", "Login", System.Web.Mvc.FormMethod.Post, new { @class = "text-center" }))
+                { 
                     <div class="form-group">
                         @Html.LabelFor(l => l.Email)
                         @Html.TextBoxFor(t => t.Email, new { @class = "form-control" })
