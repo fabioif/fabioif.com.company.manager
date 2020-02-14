@@ -32,7 +32,7 @@ namespace CompanyManager.MVC.Controllers
             return View();
         }
 
-       [ValidateAntiForgeryToken]
+        [ValidateAntiForgeryToken]
         [HttpPost]
         [AllowAnonymous]
         public ActionResult Login(LoginViewModel model)
